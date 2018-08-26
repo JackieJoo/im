@@ -1,0 +1,287 @@
+html,
+body {
+    padding: 10px 0;
+    background: url('Shadow.png') no-repeat center top;
+    background-size: cover;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'exo_2.0thin';
+    src: url('exo2.0-thin-webfont.woff2') format('woff2'), url('exo2.0-thin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container {
+    max-width: 1280px;
+    padding: 0;
+    padding-top: 45px;
+    margin: 0;
+}
+
+.header {
+    width: 360px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 23px;
+    font-size: 36px;
+    line-height: 36px;
+    color: white;
+    font-family: "exo_2.0thin", serif;
+}
+
+.items {
+    margin: 0;
+    padding: 0;
+}
+
+.item {
+    width: 320px;
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.item-card {
+    height: 480px;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 16px;
+    padding-top: 18px;
+    padding-left: 45px;
+    border-radius: 7px;
+    background-color: #f2f2f2;
+    background: url('./itembg.png') no-repeat center;
+}
+
+.item:hover .item-card {
+    cursor: pointer;
+    background: url('./itembgHover.png') no-repeat center;
+}
+
+.item:hover .weight {
+    background-color: #2ea8e6;
+}
+
+.item:hover .item-desc a {
+    color: #2ea8e6;
+}
+
+.pretitle {
+    font-size: 16px;
+    line-height: 19.8px;
+    font-weight: normal;
+    color: #666666;
+}
+
+.pretitle-selected {
+    display: none;
+}
+
+.title {
+    margin: 0;
+    margin-top: 13px;
+    color: black;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: bold;
+}
+
+.ingredient {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 24px;
+    color: black;
+}
+
+.feature {
+    height: 48px;
+    margin: 0;
+    padding: 0;
+    margin-top: 17px;
+    color: #666666;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.weight {
+    width: 81px;
+    height: 81px;
+    margin-top: 195px;
+    margin-left: 176px;
+    padding-top: 17px;
+    padding-right: 2px;
+    text-align: center;
+    font-size: 42px;
+    line-height: 25px;
+    color: white;
+    background-color: #1698d9;
+    border-radius: 50%;
+}
+
+.weight span {
+    font-size: 21px;
+    line-height: 23px;
+}
+
+.item-desc {
+    /* width: 230px; */
+    width: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 45px;
+    padding: 0;
+    font-size: 13px;
+    line-height: 16px;
+    color: white;
+}
+
+.item-desc-selected,
+.item-desc-disabled {
+    display: none;
+}
+
+.item-desc a {
+    color: #1698d9;
+    text-decoration: none;
+    border-bottom: 1px dashed #1698d9;
+}
+
+
+/* ----------------------------Additional styles for selected/disabled ---------------------*/
+
+
+/* SELECTED STYLES */
+
+.selected .item-card {
+    background: url('./itembgSelected.png') no-repeat center;
+}
+
+.selected .weight {
+    background-color: #d91667;
+}
+
+.selected .item-desc-default {
+    display: none;
+}
+
+.selected:hover .item-card {
+    background: url('./itembgSelected.png') no-repeat center;
+}
+
+.selected:hover .weight {
+    background-color: #d91667;
+}
+
+.selected .item-desc-selected {
+    display: block;
+}
+
+.selected.selected-hover .pretitle-default {
+    display: none;
+}
+
+.selected.selected-hover .pretitle-selected {
+    display: block;
+    width: 140px;
+    /* width: auto; */
+    font-size: 16px;
+    line-height: 19.8px;
+    color: #e52e7a;
+}
+
+.selected.selected-hover .item-card {
+    background: url('./itembgHoverSelected.png') no-repeat center;
+}
+
+.selected.selected-hover .weight {
+    background-color: #e62e7a;
+}
+
+
+/* DISABLED STYLES */
+
+.disabled .item-card {
+    background: url('./itembgDisabled.png') no-repeat center;
+}
+
+.disabled .pretitle-selected {
+    display: none;
+}
+
+.disabled .pretitle-default {
+    display: block;
+    width: auto;
+    font-size: 16px;
+    line-height: 19.8px;
+}
+
+.disabled:hover .item-card {
+    cursor: default;
+    background: url('./itembgDisabled.png') no-repeat center;
+}
+
+.disabled:hover .item-card .weight {
+    background-color: #b3b3b3;
+}
+
+.disabled .pretitle,
+.disabled .title,
+.disabled .ingredient,
+.disabled .feature {
+    opacity: 0.5;
+}
+
+.disabled .weight {
+    background-color: #b3b3b3;
+}
+
+.disabled .item-desc-selected,
+.disabled .item-desc-default {
+    display: none;
+}
+
+.disabled .item-desc-disabled {
+    display: block;
+    color: #ffff66;
+}
+
+
+/* ----------------------------------------------------------------------------------------- */
+
+@media (min-width: 800px) {
+    .container {
+        margin: auto;
+    }
+    .header {
+        width: 480px;
+    }
+    .items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: auto;
+    }
+    .item {
+        margin: 0 auto;
+    }
+    .item-0 {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .item-1 {
+        margin-right: 25px;
+    }
+}
+
+@media (min-width: 1050px) {
+    .item {
+        margin: auto;
+    }
+}
